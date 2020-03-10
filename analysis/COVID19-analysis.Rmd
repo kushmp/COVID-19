@@ -12,7 +12,7 @@ setwd("C:/Users/Kushal/OneDrive/Documents/GitHub/COVID-19/csse_covid_19_data/css
 
 covid19_tsRawData=read.csv("time_series_19-covid-Confirmed-date_country.csv",header = TRUE)
 
-covid19.ts=ts(data = covid19_tsRawData$Grand.Total,start = c(2020,1,2),frequency = 366)
+covid19.ts=ts(data = covid19_tsRawData$Grand.Total,start = c(2020,2),frequency = 366)
 
 covid19.ts
 
@@ -27,8 +27,5 @@ plot(diff(covid19.ts,differences = 1),type = 'l')
 
 adf.test(diff(covid19.ts,differences = 1))
 
-library(esquisse)
-
-esquisse::esquisser(covid19_tsRawData)
 ```
 
